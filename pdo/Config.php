@@ -3,6 +3,6 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$dbName = 'crudPessoa';
+$dbName = 'crudpessoa';
 
 ?>

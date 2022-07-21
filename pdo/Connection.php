@@ -12,5 +12,5 @@ public static function getConnection($host, $dbName, $userName, $pass) {
     }
 }
 }
-return Connection::getConnection($host, $dbName, $userName, $pass);
+return Connection::getConnection($host, $dbName, $user, $pass);
 ?>
