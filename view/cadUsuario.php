@@ -19,6 +19,12 @@
         >
             <input type="text" name="nome" placeholder="Insira seu nome..."/>
             <br/><br/>
+            <select name="perfilAcesso">
+                <option value="">Selecione uma opção</option>
+                <option value="admin">Administrador</option>
+                <option value="user">Usuário</option>
+            </select>
+            <br/><br/>
             <input type="text" name="usuario" placeholder="Insira seu nome de usuário..." />
             <br/><br/>
             <input type="password" name="senha" minlength="8" placeholder="Insira a senha..."/>
@@ -56,6 +62,9 @@
                     ?>
                 </tbody>
             </table>
+            <br/><br/>
+            <input type="button" value="Ocultar Lista"
+            onclick="document.getElementById('lista').style.visibility='hidden'"/>
         </div>
     </body>
 </html>
