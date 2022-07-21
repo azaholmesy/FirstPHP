@@ -2,6 +2,7 @@
 <?php 
     require_once '../controller/CUsuario.php';
     $cadUsuario = new CUsuario;
+    $listaUsers = $cadUsuario->getUsuarios();
 ?>
 <html>
     <head>
@@ -27,7 +28,34 @@
             <input type="button" value="Voltar"
             onclick="location.href='../index.php'"/>
             <input type="button" value="Listar Usuários"
-            onclick="location.href='listaUsuarios.php'"/>
+            onclick="document.getElementById('lista').style.visibility='visible'"/>
         </form>
+        <div id="lista" style="visibility: hidden;">
+            <h2>Lista Usuários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Usuário</th>
+                        <th>Usuário</th>
+                        <th>Funções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach ($listaUsers as $user):
+                    ?>
+                    <tr>
+                        <td><?php echo $user['idUsuario']; ?></td>
+                        <td><?php echo $user['nomeUsuario']; ?></td>
+                        <td><?php echo $user['usuario']; ?></td>
+                        <td>-----</td>
+                    </tr>
+                    <?php 
+                        endforeach;
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
