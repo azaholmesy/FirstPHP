@@ -19,6 +19,7 @@
                         <th>ID</th>
                         <th>Nome Usuário</th>
                         <th>Usuário</th>
+                        <th>Tipo Perfil</th>
                         <th>Funções</th>
                     </tr>
                 </thead>
@@ -30,6 +31,7 @@
                         <td><?php echo $user['idUsuario']; ?></td>
                         <td><?php echo $user['nomeUsuario']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
+                        <td><?php echo $user['perfilAcesso']; ?></td>
                         <td>-----</td>
                     </tr>
                     <?php 
