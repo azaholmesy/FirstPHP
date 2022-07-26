@@ -32,8 +32,16 @@
                         <td><?php echo $user['nomeUsuario']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
                         <td><?php echo $user['perfilAcesso']; ?></td>
-                        <td> Editar | 
-                            <form action="<?php $cadUsuario->deletar(); ?>" method="POST">
+                        <td>
+                            <form action="editarUser.php" method="POST">
+                                <input 
+                                    type="hidden" 
+                                    name="idUsuario" 
+                                    value="<?php echo $user['idUsuario']; ?>"
+                                    />
+                                    <input type="submit" value="Editar" name="editar"/>
+                                </form> 
+                            <form action="../controller/DeletarUser.php" method="POST">
                                 <input 
                                 type="hidden" 
                                 name="idUsuario" 
