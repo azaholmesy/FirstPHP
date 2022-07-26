@@ -18,10 +18,11 @@ class CUsuario {
             $nome = $_POST['nome'];
             $usuario = $_POST['usuario'];
             $senha = $_POST['senha'];
-            $perfilAcesso = $_POST['pefilAcesso'];
-
+            $perfilAcesso = $_POST['perfilAcesso'];
+            
             $pdo = require_once '../pdo/Connection.php';
             $sql = "insert into usuario values (null,?,?,?,?)";
+
             $sth = $pdo->prepare($sql);
             $sth->bindParam(1, $nome, PDO::PARAM_STR);
             $sth->bindParam(2, $usuario, PDO::PARAM_STR);
@@ -36,7 +37,7 @@ class CUsuario {
 
     public function getUsuarios() {
         $pdo = require_once '../pdo/Connection.php';
-        $sql = "select idUsuario, nomeUsuario, usuario from usuario";
+        $sql = "select idUsuario, nomeUsuario, usuario, perfilAcesso from usuario";
         $sth = $pdo->prepare($sql);
         $sth->execute();
         $result = $sth->fetchAll();

@@ -2,7 +2,6 @@
 <?php 
     require_once '../controller/CUsuario.php';
     $cadUsuario = new CUsuario;
-    $listaUsers = $cadUsuario->getUsuarios();
 ?>
 <html>
     <head>
