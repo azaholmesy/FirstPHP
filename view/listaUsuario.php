@@ -31,7 +31,14 @@
                         <td><?php echo $user['idUsuario']; ?></td>
                         <td><?php echo $user['nomeUsuario']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
-                        <td><?php echo $user['perfilAcesso']; ?></td>
+                        <td><?php 
+                                if($user['perfilAcesso'] == "admin") {
+                                    echo "Administrador";
+                                } else if($user['perfilAcesso'] == "user") {
+                                    echo "Usuário";
+                                }  
+                        ?>
+                        </td>
                         <td>
                             <form action="editarUser.php" method="POST">
                                 <input 
